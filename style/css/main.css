@@ -1,0 +1,138 @@
+html, figure, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, form, label, legend, table, caption, footer, header, menu, nav, video, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 62.5%;
+  font: inherit;
+  list-style: none;
+  text-decoration: none;
+  color: #000000; }
+
+.container {
+  box-sizing: border-box;
+  max-width: 1170px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+  @media (max-width: 1210px) {
+    .container {
+      max-width: 1024px; } }
+  @media (max-width: 1024px) {
+    .container {
+      max-width: 882px;
+      padding-left: 2rem;
+      padding-right: 2rem; } }
+
+.header {
+  height: 100vh;
+  min-height: 740px;
+  position: relative;
+  background-position: 0 0;
+  background-size: cover;
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; }
+  .header .header__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+    @media (max-width: 1210px) {
+      .header .header__bg {
+        width: auto; } }
+  .header .header__hero {
+    position: relative;
+    z-index: 4; }
+    .header .header__hero .hero__title {
+      color: #fff;
+      font-size: 9.5rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-align: center;
+      text-shadow: 3px 1px 2px #969696; }
+      @media (max-width: 1024px) {
+        .header .header__hero .hero__title {
+          font-size: 5rem; } }
+      @media (max-width: 576px) {
+        .header .header__hero .hero__title {
+          font-size: 3rem; } }
+    .header .header__hero .hero__subtitle {
+      text-align: center;
+      color: #11749e;
+      font-size: 1.54rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: .5rem; }
+      @media (max-width: 1024px) {
+        .header .header__hero .hero__subtitle {
+          font-size: 1.3rem; } }
+      @media (max-width: 576px) {
+        .header .header__hero .hero__subtitle {
+          font-size: 1.2rem; } }
+      .header .header__hero .hero__subtitle .hero__subtitle--link {
+        text-decoration: none;
+        color: inherit; }
+  .header .hero__btn {
+    margin-top: 14vh;
+    cursor: pointer; }
+    @media (max-width: 576px) {
+      .header .hero__btn {
+        margin-top: 7vh; } }
+    .header .hero__btn .btn__title {
+      text-align: center;
+      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 2vh; }
+    .header .hero__btn .btn__scrollbtn {
+      width: 75px;
+      height: 75px;
+      padding: .6rem;
+      box-sizing: border-box;
+      margin: 0 auto; }
+      .header .hero__btn .btn__scrollbtn .scroll__btn {
+        fill: #fff; }
+
+.navbar {
+  font-family: 'Raleway', sans-serif;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  border-bottom: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 1rem 0; }
+  @media (max-width: 1024px) {
+    .navbar {
+      padding-top: 1rem;
+      padding-bottom: 1rem; } }
+  .navbar .navbar__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .navbar .navbar__content .navbar__logo {
+      height: 45px;
+      display: block; }
+      .navbar .navbar__content .navbar__logo img {
+        height: 45px; }
+    .navbar .navbar__content .navbar__nav {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center; }
+      @media (max-width: 1024px) {
+        .navbar .navbar__content .navbar__nav {
+          width: auto;
+          order: 1; } }
+      .navbar .navbar__content .navbar__nav .menu ul {
+        display: flex; }
+        .navbar .navbar__content .navbar__nav .menu ul .page_item {
+          margin-right: 1.5vw; }
+          .navbar .navbar__content .navbar__nav .menu ul .page_item:last-child {
+            margin-right: 0; }
+          .navbar .navbar__content .navbar__nav .menu ul .page_item a {
+            font-size: 1.2rem;
+            color: #fff; }
