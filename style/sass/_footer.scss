@@ -1,0 +1,39 @@
+.footer {
+  position: relative;
+  z-index: 6;
+  bottom: 0;
+  left: 0;
+  @include Raleway;
+  background: #222222;
+  padding: 3.125rem 0;
+  width: 100%;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    @include mobile {
+      display: block;
+    }
+    .footer__copy,
+    .footer__designed {
+      color: #fff;
+      @include Raleway;
+      &__icon {
+        display: inline-block;
+      	width: 29px;
+      	height: 26px;
+      }
+      &__link {
+        color: #fff;
+        @include Raleway;
+      }
+    }
+    .footer__copy, {
+      align-self: flex-end;
+      @include mobile {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

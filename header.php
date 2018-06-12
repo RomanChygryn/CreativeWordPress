@@ -9,21 +9,28 @@
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style/css/main.css">
 </head>
 <body>
-  <header class="header" id="header">
 
-    <?php if(get_field('header_bg')) : ?>
-      <img class="header__bg" src="<?php the_field('header_bg'); ?>" alt="" />
-    <?php endif; ?>
 
-  <?php get_template_part( 'part/nav' ); ?>
-  <div class="header__hero hero">
-          <?php if(get_field('header_title')) : ?>
-            <h1 class="hero__title"><?php the_field('header_title'); ?></h1>
-          <?php endif; ?>
-          <?php if(get_field('header_title')) : ?>
-            <h2 class="hero__subtitle">power by<a href="https://psdfreebies.com/" class="hero__subtitle--link"><?php the_field('header_subtitle'); ?></a></h2>
-          <?php endif; ?>
-        </div>
+  <?php
 
-        <a href="#">See more</a>
-  </header>
+  			if ( is_front_page() ) : ?>
+          <header class="header" id="header">
+
+            <?php if(get_field('header_bg')) : ?>
+              <img class="header__bg" src="<?php the_field('header_bg'); ?>" alt="" />
+            <?php endif; ?>
+
+          <?php get_template_part( 'part/nav' ); ?>
+          <div class="header__hero hero">
+                  <?php if(get_field('header_title')) : ?>
+                    <h1 class="hero__title"><?php the_field('header_title'); ?></h1>
+                  <?php endif; ?>
+
+                    <h2 class="hero__subtitle"><?php the_field('header_subtitle'); ?></h2>
+
+                </div>
+
+                <a class="header__hero__btn" href="#"><?php the_field('header_btn_text'); ?></a>
+          </header>
+
+  				<?php endif;

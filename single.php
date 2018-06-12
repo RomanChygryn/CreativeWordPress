@@ -1,37 +1,60 @@
-<?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package waxom
- */
 
-get_header();
-?>
+<div id="page">
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div class="column span-10 first" id="maincontent">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+		<div class="content">
 
-			get_template_part( 'template-parts/content', get_post_type() );
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			the_post_navigation();
-      the_content();
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+				<!-- <div class="navigation small">
+					<div class="alignleft"><?php previous_post_link('&laquo; %link') ?></div>
+					<div class="alignright"><?php next_post_link('%link &raquo;') ?></div>
+				</div>
+				<div style="padding-bottom: 15px;"></div> -->
 
-		endwhile; // End of the loop.
-		?>
+				<div class="post" id="post-<?php the_ID(); ?>">
+					<h2><a href="<?php echo get_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>"><?php the_title(); ?></a></h2>
+					<p class="small">
+						<?php the_time('F jS, Y') ?> &nbsp;|&nbsp;
+						<!-- by <?php the_author() ?> -->
+						Published in
+						<?php
+							the_category(', ');
+							if($post->comment_count > 0) {
+									echo ' &nbsp;|&nbsp; ';
+									if($post->comment_count > 1) {
+										echo '<a href="#comments">' . $post->comment_count . ' Comments</a>';
+									} else {
+										echo '<a href="#comments">1 Comment</a>';
+									}
+							}
+							edit_post_link('Edit', ' &nbsp;|&nbsp; ', '');
+						?>
+					</p>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+					<div class="entry">
+						<p><?php the_excerpt(); ?></p>
 
-<?php
+						<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 
-get_footer();
+
+					</div>
+				</div>
+
+			<?php comments_template(); ?>
+
+			<?php endwhile; else: ?>
+
+				<p>Sorry, no posts matched your criteria.</p>
+
+		<?php endif; ?>
+
+		</div> <!-- /content -->
+	</div> <!-- /maincontent-->
+
+	<?php get_sidebar(); ?>
+
+	</div> <!-- /page -->
+
+<?php get_footer(); ?>
